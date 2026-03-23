@@ -1,0 +1,30 @@
+.service-models {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+  background: var(--ice-blue);
+}
+
+.service-models__heading {
+  color: var(--obsidian);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 120%; /* 38.4px */
+  letter-spacing: -0.64px;
+}
+
+@media (max-width: 900px) {
+  .service-models__heading {
+    font-size: 28px;
+    letter-spacing: -0.56px;
+  }
+}
+
+@media (max-width: 600px) {
+  .service-models__heading {
+    font-size: 24px;
+    letter-spacing: -0.48px;
+  }
+}

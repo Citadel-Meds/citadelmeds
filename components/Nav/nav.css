@@ -1,0 +1,459 @@
+/* ==========================================================================
+   NAV — Desktop (default)
+   Solid bar for clear hierarchy and readability on any background
+   ========================================================================== */
+
+nav {
+  position: fixed;
+  top: 24px;
+  left: 104px;
+  right: 104px;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+
+  border-radius: 24px;
+  overflow: visible;
+
+  /* Solid surface so text is always readable on any hero/section color */
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(0, 0, 0, 0.06);
+
+  /* Elevation: reads on both light and dark surfaces */
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.08),
+    0 1px 3px rgba(0, 0, 0, 0.04);
+
+  transition:
+    box-shadow 0.2s ease,
+    border-radius 0.3s ease;
+}
+
+.nav-logo-link {
+  display: block;
+  position: relative;
+  z-index: 2;
+  line-height: 0;
+}
+
+.nav-logo {
+  height: 40px;
+  width: auto;
+  flex-shrink: 0;
+  /* Ensure logo stays visible on light bar */
+  filter: none;
+}
+
+/* ==========================================================================
+   NAV LINKS — Desktop (clear hierarchy: dark on light bar)
+   ========================================================================== */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.nav-links > a {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--obsidian);
+  transition:
+    color 0.2s ease,
+    font-weight 0.15s ease;
+}
+
+.nav-links > a:hover {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.nav-links > a:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+  border-radius: 4px;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* Services dropdown wrapper */
+.nav-links__services {
+  position: relative;
+}
+
+.nav-links__trigger {
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--obsidian);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition:
+    color 0.2s ease,
+    font-weight 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.nav-links__trigger:hover {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.nav-links__trigger[aria-expanded="true"] {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* Dropdown panel — matches nav bar, separated by gap */
+.nav-dropdown {
+  position: absolute;
+  top: calc(100% + 32px);
+  left: 50%;
+  transform: translateX(-20%);
+  min-width: 200px;
+  padding: 12px 0;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.08),
+    0 1px 3px rgba(0, 0, 0, 0.04);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease,
+    transform 0.2s ease;
+  z-index: 1001;
+}
+
+.nav-dropdown--open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.nav-dropdown__item {
+  display: block;
+  padding: 12px 20px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--obsidian);
+  text-decoration: none;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease,
+    font-weight 0.12s ease;
+  white-space: nowrap;
+}
+
+.nav-dropdown__item:hover {
+  background: rgba(0, 0, 0, 0.04);
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.nav-dropdown__separator {
+  height: 1px;
+  margin: 4px 12px;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* Ensure nav bar has a solid background so dropdown contrast is clear */
+nav {
+  isolation: isolate;
+}
+
+/* ==========================================================================
+   NAV BUTTONS — Desktop (phone = secondary, CTA = primary hierarchy)
+   ========================================================================== */
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  z-index: 2;
+}
+
+.nav-buttons a:first-child {
+  color: var(--primary);
+}
+
+.nav-buttons a:first-child:hover {
+  border-radius: 16px;
+  background: #b2eaff;
+}
+
+.nav-buttons a:first-child p {
+  font-weight: 600;
+}
+
+.nav-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 16px;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s,
+    color 0.2s,
+    opacity 0.2s;
+}
+
+.nav-button--primary {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.nav-button--primary:hover {
+  background: var(--primary-hover);
+  opacity: 1;
+  color: var(--white);
+}
+
+/* ==========================================================================
+   HAMBURGER — hidden on desktop
+   ========================================================================== */
+
+.nav-hamburger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--obsidian);
+  position: relative;
+  z-index: 2;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ==========================================================================
+   MOBILE MENU — hidden on desktop
+   ========================================================================== */
+
+.nav-mobile-menu {
+  display: none;
+}
+
+.nav-overlay {
+  display: none;
+}
+
+/* ==========================================================================
+   TABLET — max-width: 900px
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  nav {
+    left: 24px;
+    right: 24px;
+    top: 16px;
+    padding: 10px 16px;
+    border-radius: 20px;
+  }
+
+  /* Hide desktop links, show hamburger */
+  .nav-links {
+    display: none;
+  }
+
+  .nav-hamburger {
+    display: flex;
+  }
+
+  /* Keep phone button visible on tablet, hide CTA */
+  .nav-button--primary {
+    display: none;
+  }
+
+  /* Mobile menu — solid surface, clear hierarchy */
+  .nav-mobile-menu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 80px;
+    left: 24px;
+    right: 24px;
+    z-index: 999;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 24px;
+    gap: 24px;
+
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+
+    opacity: 0;
+    transform: translateY(-12px);
+    pointer-events: none;
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .nav-mobile-menu--open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .nav-mobile-menu__links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .nav-mobile-menu__label {
+    display: block;
+    padding: 8px 16px 4px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--nav-link-text);
+  }
+
+  .nav-mobile-menu__separator {
+    height: 1px;
+    margin: 8px 0;
+    background: rgba(0, 0, 0, 0.08);
+  }
+
+  .nav-mobile-menu__links a {
+    display: block;
+    padding: 14px 16px;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--obsidian);
+    border-radius: 12px;
+    transition:
+      background 0.15s ease,
+      color 0.15s ease,
+      font-weight 0.12s ease;
+  }
+
+  .nav-mobile-menu__links a:hover,
+  .nav-mobile-menu__links a:active {
+    background: rgba(0, 0, 0, 0.04);
+    color: var(--primary);
+    font-weight: 700;
+  }
+
+  .nav-mobile-menu__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .nav-mobile-menu__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 20px;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--primary);
+    background: var(--ice);
+    border: 1px solid var(--aqua);
+    transition:
+      background 0.15s,
+      border-color 0.15s;
+  }
+
+  .nav-mobile-menu__btn:hover {
+    background: var(--sky-blue);
+    border-color: var(--aqua-hover);
+    color: var(--primary-hover);
+  }
+
+  .nav-mobile-menu__btn--primary {
+    background: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+  }
+
+  .nav-mobile-menu__btn--primary:hover {
+    opacity: 1;
+    background: var(--primary-hover);
+    border-color: var(--primary-hover);
+    color: var(--white);
+  }
+
+  /* Overlay */
+  .nav-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 998;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
+}
+
+/* ==========================================================================
+   MOBILE — max-width: 600px
+   ========================================================================== */
+
+@media (max-width: 600px) {
+  nav {
+    left: 16px;
+    right: 16px;
+    top: 12px;
+    padding: 8px 12px;
+    border-radius: 16px;
+  }
+
+  .nav-logo {
+    height: 32px;
+  }
+
+  /* Hide phone button on small mobile, only show hamburger */
+  .nav-buttons {
+    display: none;
+  }
+
+  .nav-mobile-menu {
+    top: 68px;
+    left: 16px;
+    right: 16px;
+    padding: 20px 16px;
+    border-radius: 16px;
+    gap: 20px;
+  }
+
+  .nav-mobile-menu__links a {
+    padding: 12px 14px;
+    font-size: 17px;
+  }
+}

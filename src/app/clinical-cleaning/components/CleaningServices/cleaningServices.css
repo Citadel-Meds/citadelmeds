@@ -1,0 +1,281 @@
+/* Section */
+.cleaning-services {
+  background: var(--ice-blue);
+}
+
+.cleaning-services__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.cleaning-services__header {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.cleaning-services__title {
+  margin: 0 0 16px 0;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.64px;
+  color: var(--obsidian);
+  text-align: center;
+}
+
+.cleaning-services__subtitle {
+  margin: 0;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--nav-link-text);
+  text-align: center;
+}
+
+/* 2-column grid, 4 rows. Rows 1–2: two items each. Row 3–4: one item spanning both columns. */
+.cleaning-services__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+/* Service card – white panel; scale on hover, no drop shadow */
+.cleaning-service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 24px;
+  background: var(--white);
+  border-radius: 24px;
+  box-shadow: none;
+  transform: scale(1);
+  transform-origin: center center;
+  transition: transform 0.35s ease;
+  position: relative;
+  z-index: 0;
+}
+
+.cleaning-service-card:hover {
+  transform: scale(1.04);
+  z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cleaning-service-card {
+    transition: none;
+  }
+
+  .cleaning-service-card:hover {
+    transform: none;
+  }
+}
+
+.cleaning-service-card__icon-wrap {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background: #ccf1ff;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.cleaning-service-card__icon {
+  display: block;
+  width: 24px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.cleaning-service-card__title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.36px;
+  color: var(--obsidian);
+  text-align: left;
+}
+
+.cleaning-service-card__desc {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--nav-link-text);
+}
+
+/* Row 3: full-width card – horizontal layout (icon left, content right) */
+.cleaning-service-card--full {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.cleaning-service-card--full .cleaning-service-card__content {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cleaning-service-card--full .cleaning-service-card__title {
+  margin: 0;
+}
+
+.cleaning-service-card--full .cleaning-service-card__desc {
+  margin: 0;
+}
+
+/* Row 4: large image — background layer + zoom on hover */
+.cleaning-services__image-wrap {
+  position: relative;
+  grid-column: 1 / -1;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: none;
+  aspect-ratio: 21 / 9;
+  min-height: 200px;
+}
+
+.cleaning-services__image-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1);
+  transform-origin: center center;
+  transition: transform 0.35s ease;
+}
+
+.cleaning-services__image-wrap:hover .cleaning-services__image-bg {
+  transform: scale(1.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cleaning-services__image-bg {
+    transition: none;
+  }
+
+  .cleaning-services__image-wrap:hover .cleaning-services__image-bg {
+    transform: none;
+  }
+}
+
+/* Responsive: tablet */
+@media (max-width: 900px) {
+  .cleaning-services__header {
+    margin-bottom: 32px;
+  }
+
+  .cleaning-services__title {
+    font-size: 28px;
+    letter-spacing: -0.56px;
+  }
+
+  .cleaning-services__subtitle {
+    font-size: 16px;
+  }
+
+  .cleaning-services__grid {
+    gap: 20px;
+  }
+
+  .cleaning-service-card {
+    padding: 20px;
+    gap: 14px;
+    border-radius: 20px;
+  }
+
+  .cleaning-service-card__icon-wrap {
+    width: 48px;
+    height: 48px;
+  }
+
+  .cleaning-service-card__icon {
+    width: 22px;
+    height: 28px;
+  }
+
+  .cleaning-service-card__title {
+    font-size: 17px;
+  }
+
+  .cleaning-service-card__desc {
+    font-size: 13px;
+  }
+
+  .cleaning-service-card--full {
+    gap: 16px;
+  }
+
+  .cleaning-services__image-wrap {
+    border-radius: 20px;
+  }
+}
+
+/* Responsive: mobile – single column */
+@media (max-width: 600px) {
+  .cleaning-services__header {
+    margin-bottom: 24px;
+  }
+
+  .cleaning-services__title {
+    font-size: 24px;
+    letter-spacing: -0.48px;
+  }
+
+  .cleaning-services__subtitle {
+    font-size: 15px;
+  }
+
+  .cleaning-services__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .cleaning-service-card {
+    padding: 18px;
+    gap: 12px;
+    border-radius: 16px;
+  }
+
+  .cleaning-service-card__icon-wrap {
+    width: 44px;
+    height: 44px;
+  }
+
+  .cleaning-service-card__icon {
+    width: 20px;
+    height: 26px;
+  }
+
+  .cleaning-service-card__title {
+    font-size: 16px;
+    letter-spacing: -0.32px;
+  }
+
+  .cleaning-service-card__desc {
+    font-size: 13px;
+  }
+
+  .cleaning-service-card--full {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cleaning-services__image-wrap {
+    border-radius: 16px;
+  }
+}

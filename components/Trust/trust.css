@@ -1,0 +1,126 @@
+/* ==========================================================================
+   TRUST — Desktop (default)
+   ========================================================================== */
+
+.trust {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: var(--white);
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.trust-item__icon {
+  border-radius: 24px;
+  background: var(--sky-blue);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trust-item__icon img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  display: block;
+}
+
+.trust-item p {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--charcoal);
+  text-align: center;
+  line-height: 140%;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   TABLET — max-width: 900px
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .trust {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px 32px;
+  }
+
+  .trust-item {
+    flex: 0 0 auto;
+    width: calc(33.333% - 22px);
+    min-width: 140px;
+  }
+
+  .trust-item__icon {
+    padding: 14px;
+    border-radius: 20px;
+  }
+
+  .trust-item__icon img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .trust-item p {
+    font-size: 14px;
+    white-space: normal;
+  }
+}
+
+/* ==========================================================================
+   MOBILE — max-width: 600px
+   ========================================================================== */
+
+@media (max-width: 600px) {
+  .trust {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--white);
+    border-radius: 16px;
+    border: 1px solid var(--aqua);
+    overflow: hidden;
+  }
+
+  .trust-item {
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 12px;
+    padding: 14px 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .trust-item:last-child {
+    border-bottom: none;
+  }
+
+  .trust-item__icon {
+    padding: 10px;
+    border-radius: 12px;
+    flex-shrink: 0;
+  }
+
+  .trust-item__icon img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .trust-item p {
+    font-size: 14px;
+    line-height: 140%;
+    text-align: left;
+    white-space: normal;
+  }
+}

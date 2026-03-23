@@ -1,0 +1,10 @@
+export { default as Nav } from "./Nav/Nav";
+export { default as Hero } from "./Hero/Hero";
+export { default as PageHero } from "./PageHero/PageHero";
+export { default as Trust } from "./Trust/Trust";
+export { default as Services } from "./Services/Services";
+export { default as Value } from "./Value/Value";
+export { default as Standards } from "./Standards/Standards";
+export { default as Solutions } from "./Solutions/Solutions";
+export { default as Footer } from "./Footer/Footer";
+export { default as ScrollReveal } from "./ScrollReveal/ScrollReveal";

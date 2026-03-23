@@ -1,0 +1,280 @@
+/* ==========================================================================
+   HERO — Desktop (default)
+   ========================================================================== */
+
+.hero {
+  margin-top: 120px;
+  position: relative;
+}
+
+.hero-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+
+.hero-top__contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  align-self: stretch;
+}
+
+.hero-top__contents h1 {
+  color: var(--black);
+  font-size: 56px;
+  line-height: 120%;
+  letter-spacing: -1.12px;
+  font-weight: 700;
+  max-width: 900px;
+}
+
+.hero-top__contents h1 span {
+  color: var(--primary);
+}
+
+.hero-top__contents p {
+  font-size: 24px;
+  color: #1a1a1a;
+  font-weight: 400;
+  line-height: 140%;
+  text-align: center;
+  max-width: 720px;
+}
+
+/* Requirements row */
+.hero-top__professional-requirements {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.professional-requirement {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1a1a;
+  white-space: nowrap;
+}
+
+.professional-requirement__icon {
+  font-size: 16px;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+/* CTA buttons */
+.hero-top__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.hero-top__buttons a,
+.hero-top__buttons button {
+  padding: 20px 24px;
+  border-radius: 16px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  transition:
+    opacity 0.2s,
+    transform 0.15s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+}
+
+.hero-top__buttons button {
+  background: transparent;
+  border: none;
+}
+
+.hero-top__buttons a:active,
+.hero-top__buttons button:active {
+  transform: scale(0.97);
+}
+
+.hero-top__buttons a:first-child,
+.hero-top__buttons button:first-child {
+  background: #e6f8ff;
+  border: 1px solid #b2eaff;
+  color: #01adee;
+
+}
+
+.hero-top__buttons a:first-child:hover,
+.hero-top__buttons button:first-child:hover {
+  background: var(--sky-blue);
+  border-color: var(--aqua-hover);
+  color: var(--primary-hover);
+}
+
+.hero-top__buttons a:last-child,
+.hero-top__buttons button:last-child {
+  background: #01adee;
+  color: var(--white);
+  box-shadow:
+    0px 40px 11px 0px rgba(0, 8, 97, 0),
+    0px 26px 10px 0px rgba(0, 8, 97, 0.01),
+    0px 14px 9px 0px rgba(0, 8, 97, 0.05),
+    0px 6px 6px 0px rgba(0, 8, 97, 0.09),
+    0px 2px 4px 0px rgba(0, 8, 97, 0.1);
+}
+
+.hero-top__buttons a:last-child:hover,
+.hero-top__buttons button:last-child:hover {
+  background: var(--primary-hover);
+  opacity: 1;
+}
+
+/* Hero images */
+.hero-top__image {
+  margin-top: 40px;
+  margin-bottom: 24px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero-top__image-2 {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==========================================================================
+   TABLET — max-width: 900px
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .hero {
+    margin-top: 90px;
+  }
+
+  .hero-top {
+    gap: 24px;
+  }
+
+  .hero-top__contents h1 {
+    font-size: 40px;
+    letter-spacing: -0.8px;
+  }
+
+  .hero-top__contents p {
+    font-size: 18px;
+    line-height: 150%;
+    max-width: 100%;
+  }
+
+  .hero-top__professional-requirements {
+    gap: 16px;
+  }
+
+  .professional-requirement {
+    font-size: 14px;
+  }
+
+  .professional-requirement__icon {
+    font-size: 16px;
+  }
+
+  .hero-top__buttons {
+    gap: 16px;
+  }
+
+  .hero-top__buttons a,
+  .hero-top__buttons button {
+    padding: 16px 20px;
+    font-size: 16px;
+    border-radius: 14px;
+  }
+
+  .hero-top__image {
+    margin-top: 32px;
+    margin-bottom: 16px;
+  }
+}
+
+/* ==========================================================================
+   MOBILE — max-width: 600px
+   ========================================================================== */
+
+@media (max-width: 600px) {
+  .hero {
+    /* Extra breathing room below fixed nav on mobile */
+    margin-top: 112px;
+  }
+
+  .hero-top {
+    gap: 20px;
+  }
+
+  .hero-top__contents {
+    gap: 12px;
+  }
+
+  .hero-top__contents h1 {
+    font-size: 28px;
+    letter-spacing: -0.56px;
+    line-height: 130%;
+  }
+
+  .hero-top__contents p {
+    font-size: 15px;
+    line-height: 155%;
+    max-width: 100%;
+  }
+
+  .hero-top__professional-requirements {
+    gap: 10px 16px;
+    justify-content: center;
+  }
+
+  .professional-requirement {
+    font-size: 13px;
+    gap: 6px;
+  }
+
+  .professional-requirement__icon {
+    font-size: 14px;
+  }
+
+  /* Stack buttons vertically on mobile */
+  .hero-top__buttons {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .hero-top__buttons button:first-child {
+    align-self: stretch;
+  }
+
+  .hero-top__buttons a,
+  .hero-top__buttons button {
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 16px;
+    border-radius: 14px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-top__image {
+    margin-top: 24px;
+    margin-bottom: 12px;
+  }
+}
