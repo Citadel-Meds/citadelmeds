@@ -19,7 +19,7 @@ const footerLinks = {
   ],
   company: [
     { id: "co2", label: "Contact Us", href: "/contact" },
-    { id: "co3", label: "Career", href: "/contact" },
+    { id: "co3", label: "Career", href: "mailto:info@citadelmeds.co.uk" },
   ],
 };
 
