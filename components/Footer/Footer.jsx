@@ -24,7 +24,7 @@ const footerLinks = {
     { id: "c4", label: "Quality Monitoring", href: "/compliance#quality-monitoring" },
   ],
   company: [
-    { id: "co1", label: "About Us", href: "/" },
+    // { id: "co1", label: "About Us", href: "/" },
     { id: "co2", label: "Contact Us", href: "/contact" },
     { id: "co3", label: "Career", href: "mailto:info@citadelmeds.co.uk" },
     { id: "co4", label: "Privacy Policy", href: "/" },
