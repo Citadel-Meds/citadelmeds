@@ -27,8 +27,8 @@ const footerLinks = {
     { id: "co1", label: "About Us", href: "/" },
     { id: "co2", label: "Contact Us", href: "/contact" },
     { id: "co3", label: "Career", href: "mailto:info@citadelmeds.co.uk" },
-    { id: "co4", label: "Privacy Policy", href: "/contact" },
-    { id: "co5", label: "Terms of Service", href: "/contact" },
+    { id: "co4", label: "Privacy Policy", href: "/" },
+    { id: "co5", label: "Terms of Service", href: "/" },
   ],
 };
 
