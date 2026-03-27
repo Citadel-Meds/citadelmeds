@@ -1,0 +1,77 @@
+.brands {
+  width: 100%;
+  background: #f5f8ff;
+  padding: 80px 104px;
+  display: flex;
+  justify-content: center;
+}
+
+.brands__list {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  max-width: 1200px;
+}
+
+.brands__item {
+  width: 200px;
+  height: 80px;
+  border-radius: 16px;
+  /* border: 1.333px solid #fff; */
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.brands__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Remove tile backgrounds — full-bleed logos */
+.brands__item--ico {
+  background: transparent;
+}
+
+.brands__item--hmrev {
+  background: transparent;
+}
+
+.brands__item--nhs {
+  background: transparent;
+}
+
+.brands__item:not(.brands__item--nhs) {
+  box-shadow: 0 2.667px 2.667px 0 rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 900px) {
+  .brands {
+    padding: 60px 24px;
+  }
+
+  .brands__list {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 600px) {
+  .brands {
+    padding: 40px 16px;
+  }
+
+  .brands__item {
+    width: 160px;
+    height: 72px;
+    border-radius: 14px;
+  }
+
+  /* img stays full-bleed via width/height: 100% */
+}

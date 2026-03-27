@@ -1,4 +1,5 @@
 import {
+  Brands,
   Footer,
   Hero,
   Nav,
@@ -32,6 +33,10 @@ export default function Home() {
       <ScrollReveal animation="fade-up" delay={100}>
         <Solutions />
       </ScrollReveal>
+      <ScrollReveal animation="fade-up" delay={100}>
+        <Brands />
+      </ScrollReveal>
+
       <ScrollReveal animation="fade">
         <Footer />
       </ScrollReveal>

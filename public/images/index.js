@@ -77,6 +77,7 @@ export { default as billIcon } from "./bill.svg";
 // footer images
 export { default as callIcon } from "./call.svg";
 export { default as emailIcon } from "./email-icon.svg";
+export {default as Location} from './location.svg'
 
 //contact images
 export { default as CallReceiveIcon } from "./contact-call.svg";
@@ -94,3 +95,12 @@ export { default as RegistrationIcon } from "./RegistrationIcon.svg";
 export { default as WorkforceSafetyIcon } from "./WorkforceIcon.svg";
 export { default as PoliciesIcon } from "./PoliciesIcon.svg";
 export { default as CheckIcon } from "./check-circle.svg";
+
+
+// brands images
+export {default as ico} from './ico.png'
+export {default as hiscox} from './hiscox.png'
+export {default as hmrev} from './hmrev.png'
+export {default as nmc} from './nmc.png'
+export {default as nhs} from './nhs.png'
+export {default as manchester} from './manchester.png'

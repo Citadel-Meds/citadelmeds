@@ -2,7 +2,13 @@
 import React from "react";
 import Link from "next/link";
 import "./footer.css";
-import { callIcon, emailIcon, FooterBg, FooterImage } from "../../public/images";
+import {
+  callIcon,
+  emailIcon,
+  FooterBg,
+  FooterImage,
+  Location,
+} from "../../public/images";
 
 const footerLinks = {
   services: [
@@ -18,19 +24,28 @@ const footerLinks = {
     { id: "c4", label: "Quality Monitoring", href: "/compliance#quality-monitoring" },
   ],
   company: [
+    { id: "co1", label: "About Us", href: "/" },
     { id: "co2", label: "Contact Us", href: "/contact" },
     { id: "co3", label: "Career", href: "mailto:info@citadelmeds.co.uk" },
+    { id: "co4", label: "Privacy Policy", href: "/contact" },
+    { id: "co5", label: "Terms of Service", href: "/contact" },
   ],
 };
 
+const ADDRESS = "Flat 3, 8 castle yard Oswaldtwistle United Kingdom";
 const PHONE = "07310 086 696";
 const EMAIL = "info@citadelmeds.co.uk";
 const OUTLOOK_EMAIL = "citadelmeds@outlook.com";
+
+const MAPS_HREF = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+  ADDRESS
+)}`;
 
 const PHONE_ICON_URL =
   callIcon?.src ?? callIcon;
 const EMAIL_ICON_URL =
   emailIcon?.src ?? emailIcon;
+const LOCATION_ICON_URL = Location?.src ?? Location;
 
 const LINKEDIN_HREF = "http://www.linkedin.com/in/citadel-meds-3766013b1";
 const INSTAGRAM_HREF =
@@ -85,6 +100,15 @@ const Footer = () => {
         <div className="footer__column footer__column--contact">
           <h3 className="footer__heading footer__heading--contact">Contact</h3>
           <div className="footer__contact">
+            <a
+              href={MAPS_HREF}
+              className="footer__contact-item"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={LOCATION_ICON_URL} alt="" width={24} height={24} />
+              <span>{ADDRESS}</span>
+            </a>
             <a href="tel:07310086696" className="footer__contact-item">
               <img src={PHONE_ICON_URL} alt="" width={24} height={24} />
               <span>{PHONE}</span>
@@ -133,35 +157,25 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer__separator" />
-      <div className="footer__values">
-        <Link href="/" className="footer__values-item">
-          Excellence
-        </Link>
+      <p className="footer__values" aria-label="Core values">
+        <span className="footer__values-item">Excellence</span>
         <span className="footer__values-dot" aria-hidden>
           •
         </span>
-        <Link href="/" className="footer__values-item">
-          Dignity
-        </Link>
+        <span className="footer__values-item">Dignity</span>
         <span className="footer__values-dot" aria-hidden>
           •
         </span>
-        <Link href="/" className="footer__values-item">
-          Integrity
-        </Link>
+        <span className="footer__values-item">Integrity</span>
         <span className="footer__values-dot" aria-hidden>
           •
         </span>
-        <Link href="/" className="footer__values-item">
-          Compassion
-        </Link>
+        <span className="footer__values-item">Compassion</span>
         <span className="footer__values-dot" aria-hidden>
           •
         </span>
-        <Link href="/" className="footer__values-item">
-          Reliability
-        </Link>
-      </div>
+        <span className="footer__values-item">Reliability</span>
+      </p>
       <img
         src={FooterImage?.src ?? FooterImage}
         alt="registered logo"
