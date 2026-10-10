@@ -1,3 +1,5 @@
+export const metadata = { title: 'Compliance & Governance', description: 'Our governance framework, workforce checks and quality assurance standards.', alternates: { canonical: '/compliance' } };
+
 import React from "react";
 import "./cleaning.css";
 import ClinicalHero from "./components/Hero/ClinicalHero";

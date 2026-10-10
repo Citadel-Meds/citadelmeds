@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap');
+.page { color: #333; background: var(--ice-blue); }
+.section { padding: 80px 104px; scroll-margin-top: 128px; }
+.page main h1, .page main h2, .page main h3 { text-align: left; color: #000; }
+.page main h1 { font-size: 40px; line-height: 1.2; letter-spacing: -.8px; }
+.page main h2 { font-size: 32px; line-height: 1.2; letter-spacing: -.64px; }
+.white { background: white; }
+.hero { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); align-items: center; gap: 40px; padding-top: 160px; position: relative; }
+.heroCopy { display: flex; flex-direction: column; gap: 40px; }
+.copy { display: flex; flex-direction: column; gap: 16px; font-size: 18px; line-height: 1.4; }
+.tagline { font-size: 20px; font-weight: 600; line-height: 1.2; color: var(--primary); }
+.badge { display: inline-flex; align-self: flex-start; align-items: center; gap: 8px; padding: 8px 16px; background: rgba(1,173,238,.1); border: 1px solid rgba(1,173,238,.2); border-radius: 8px; color: var(--primary); font-size: 16px; font-weight: 500; }
+.badge img { display: block; }
+.buttons { display: flex; gap: 24px; flex-wrap: wrap; }
+.photo { height: 518px; overflow: hidden; border-radius: 40px; }
+.photo img { width: 100%; height: 100%; display: block; object-fit: cover; }
+.available { position: absolute; left: calc(50% - 53.5px); top: 592px; display: flex; flex-direction: column; gap: 8px; background: white; border: 1px solid var(--aqua); border-radius: 24px; padding: 32px 24px; box-shadow: 0 8px 16px rgba(1,173,238,.16); }
+.available strong { color: var(--primary); font-size: 24px; letter-spacing: -.48px; line-height: 1; }
+.available span { color: #666; font-size: 16px; line-height: 1; }
+.signals { display: flex; flex-wrap: wrap; gap: 24px; list-style: none; }
+.signals li { display: flex; align-items: center; gap: 8px; font-family: 'Manrope',sans-serif; font-size: 14px; font-weight: 500; line-height: 1; }
+.signals img { display: block; }
+.heading { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px; margin-bottom: 40px; }
+.page .heading h2 { text-align: center; }
+.heading > p:not(.eyebrow) { font-size: 18px; line-height: 1.4; }
+.eyebrow { font-size: 20px; font-weight: 500; line-height: 1.2; color: var(--primary); letter-spacing: -.4px; }
+.grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px; }
+.card { background: white; border: 1px solid var(--aqua); border-radius: 24px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 16px; padding: 24px; }
+.icon { display: flex; padding: 8px; border-radius: 16px; background: var(--sky-blue); }
+.icon img { display: block; }
+.page .card h3 { color: var(--obsidian); font-size: 24px; font-weight: 600; line-height: 1; letter-spacing: -.48px; }
+.card p { font-size: 18px; line-height: 1.2; color: #666; }
+.roleCard { justify-content: flex-start; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; }
+.tags li { padding: 8px; border: 1px solid var(--aqua); color: var(--primary); background: var(--ice); border-radius: 8px; font-size: 12px; line-height: 1; }
+.applyRole { display: inline-flex; gap: 8px; align-items: center; margin-top: auto; padding: 8px 16px; font-size: 16px; font-weight: 500; color: var(--primary); }
+.applyRole:hover { background: var(--ice); border-radius: 12px; }
+.steps { display: flex; flex-direction: column; gap: 24px; list-style: none; }
+.steps li { display: flex; gap: 40px; align-items: stretch; }
+.stepMarker { width: 64px; flex-shrink: 0; position: relative; }
+.stepMarker span { display: flex; align-items: center; justify-content: center; width: 64px; height: 64px; color: white; background: var(--primary); border-radius: 16px; font-size: 20px; }
+.stepConnector { position: absolute; left: 28px; top: 64px; bottom: -24px; width: 8px; background: url("/images/careers/timeline.svg") center top repeat-y; }
+.stepCard { flex: 1; min-width: 0; padding: 40px; border: 1px solid var(--periwinkle-mist); border-radius: 40px; display: flex; flex-direction: column; gap: 16px; }
+.page .stepCard h3 { color: var(--obsidian); font-size: 24px; line-height: 1.2; font-weight: 600; letter-spacing: -.48px; }
+.stepCard p { color: #666; font-size: 18px; line-height: 1.2; }
+.application { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 40px; align-items: center; background: var(--primary-hover); color: white; }
+.applicationCopy { display: flex; flex-direction: column; gap: 24px; }
+.applicationCopy .eyebrow { color: #57d1fe; }
+.page .applicationCopy h2 { color: white; }
+.applicationCopy p:not(.eyebrow) { font-size: 18px; line-height: 1.4; }
+.reassurance { display: flex; flex-direction: column; gap: 16px; list-style: none; }
+.reassurance li { display: flex; gap: 8px; align-items: center; font-size: 16px; line-height: 1.2; }
+.reassurance img { flex-shrink: 0; }
+.talk { display: flex; flex-direction: column; gap: 24px; padding: 24px; border-radius: 24px; background: rgba(255,255,255,.1); }
+.page .talk h3 { color: white; text-align: left; font-size: 24px; }
+.talk > div { display: flex; flex-wrap: wrap; gap: 16px; }
+.talk a { display: flex; align-items: center; gap: 8px; border: 1px solid #57d1fe; border-radius: 16px; padding: 16px; font-size: 16px; font-weight: 700; }
+.form { padding: 24px 40px; background: #f9fafb; border-radius: 24px; color: var(--obsidian); }
+.form fieldset { border: 0; min-width: 0; display: flex; flex-direction: column; gap: 16px; }
+.form label { display: flex; flex-direction: column; gap: 12px; font-size: 16px; font-weight: 500; line-height: 1; }
+.formRow { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
+.form input, .form select, .form textarea { width: 100%; min-width: 0; color: var(--obsidian); background-color: white; border: 1px solid #eaeaec; border-radius: 12px; font-size: 14px; font-weight: 400; line-height: 1.4; padding: 16px; color-scheme: light; }
+.form input, .form select { height: 48px; }
+.form select { appearance: none; padding-right: 40px; background-image: url('/images/careers/select.svg'); background-position: right 16px center; background-repeat: no-repeat; }
+.form textarea { min-height: 124px; resize: vertical; }
+.textareaWrap { position: relative; }
+.textareaWrap > img { position: absolute; bottom: 10px; right: 10px; pointer-events: none; }
+.counter { text-align: left; color: #666; font-size: 12px; margin-top: -8px; }
+.submit { width: 100%; border-radius: 16px; padding: 20px 24px; color: white; background: var(--primary); font-size: 20px; font-weight: 500; }
+.submit:hover { background: var(--primary-hover); }
+.submit:disabled { opacity: .7; cursor: wait; }
+.status { margin-top: 16px; color: #13613c; font-size: 16px; line-height: 1.4; }
+.error { color: #b42318; }
+.page a:focus-visible, .page button:focus-visible, .form input:focus-visible, .form select:focus-visible, .form textarea:focus-visible { outline: 2px solid var(--primary); outline-offset: 4px; }
+.page .contact h2 { text-align: center; color: black; }
+@media(max-width:1200px) { .section { padding-left: 40px; padding-right: 40px; } .heroCopy { gap: 28px; } .signals { gap: 16px; } }
+@media(max-width:900px) { .section { padding: 48px 24px; } .hero { padding-top: 140px; grid-template-columns: 1fr; } .photo { height: 480px; } .available { top: auto; bottom: 32px; left: 40px; } .grid { grid-template-columns: repeat(2,minmax(0,1fr)); } .application { grid-template-columns: 1fr; } }
+@media(max-width:600px) { .section { padding: 40px 16px; } .hero { padding-top: 128px; } .page main h1 { font-size: 32px; } .page main h2 { font-size: 28px; } .copy, .heading > p:not(.eyebrow) { font-size: 16px; } .tagline { font-size: 18px; } .buttons { gap: 12px; } .buttons a { width: 100%; font-size: 16px; padding: 16px 20px; } .photo { height: 360px; border-radius: 24px; } .available { padding: 20px; } .grid { grid-template-columns: 1fr; gap: 16px; } .page .card h3, .page .stepCard h3 { font-size: 22px; line-height: 1.2; } .card p, .stepCard p { font-size: 16px; } .steps li { gap: 16px; } .stepMarker { width: 48px; } .stepMarker span { width: 48px; height: 48px; font-size: 16px; } .stepConnector { left: 20px; top: 48px; } .stepCard { padding: 24px; border-radius: 24px; } .applicationCopy p:not(.eyebrow) { font-size: 16px; } .form { padding: 24px 20px; } .formRow { grid-template-columns: 1fr; } .submit { font-size: 16px; padding: 16px 20px; } .contact :global(.solutions-bottom__cta__buttons button) { width: 100%; font-size: 16px; padding: 16px 20px; } }
+.dropdown { position: relative; min-width: 0; display: flex; flex-direction: column; gap: 12px; }
+.dropdownLabel { font-size: 16px; font-weight: 500; line-height: 1; }
+.form .validationSelect { position: absolute; width: 1px; height: 1px; opacity: 0; padding: 0; pointer-events: none; }
+.dropdownTrigger { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; min-height: 48px; text-align: left; padding: 12px 16px; border: 1px solid #eaeaec; border-radius: 12px; background: white; color: #0a0a0b; font-size: 16px; font-weight: 400; line-height: 1.4; cursor: pointer; }
+.dropdownTrigger img { flex-shrink: 0; }
+.placeholder { color: #a9a9b1; }
+.dropdownMenu { position: absolute; top: calc(100% + 8px); left: 0; width: 100%; z-index: 20; padding: 16px 0; border-radius: 24px; background: white; box-shadow: 0 4px 8px #00000014; overflow: hidden; max-height: 368px; overflow-y: auto; }
+.dropdownMenu button { display: block; width: 100%; padding: 16px 24px; border: 0; background: white; color: #666; font-size: 16px; font-weight: 500; line-height: 1; letter-spacing: .32px; text-align: left; cursor: pointer; }
+.dropdownMenu button:hover, .dropdownMenu button:focus-visible { background: #f5fcff; outline-offset: -2px; }
+.dropdownMenu button[aria-selected=true] { color: #0185b7; }
+.dropdownDivider { height: 0; position: relative; }
+.dropdownDivider img { position: absolute; top: -.5px; left: 0; }
+.dropdownError { color: #b42318; font-size: 13px; }

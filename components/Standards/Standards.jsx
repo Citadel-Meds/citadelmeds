@@ -26,10 +26,10 @@ const Standards = () => {
   return (
     <section className="standards section-padding">
       <div className="standards__first-grid">
-        <h1 className="standards__first-grid__item-1">
+        <h2 className="standards__first-grid__item-1">
           Your Trusted Platform for UK-Based Healthcare Staffing & Clinical
           Cleaning Services
-        </h1>
+        </h2>
         <div className="standards__first-grid__item-2">
           <p>
             Delivering elite medical staffing and specialized clinical cleaning
@@ -66,7 +66,7 @@ const Standards = () => {
       </div>
       <div className="standards__second-grid">
         <div className="standards__second-grid_left">
-          <h1>Built on CQC Fundamental Standards</h1>
+          <h2>Built on CQC Fundamental Standards</h2>
           <p>
             Our services are governed by robust policies and quality assurance
             processes aligned with CQC and NHS expectations.

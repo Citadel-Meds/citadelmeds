@@ -22,7 +22,7 @@ const ProcessStep = ({ number, title, description, isLast }) => {
 const Process = () => {
   return (
     <section className="process section-padding">
-      <h1 className="process__heading">Our Safer Recruitment Process</h1>
+      <h2 className="process__heading">Our Safer Recruitment Process</h2>
       <div className="process__content">
         {processSteps.map((step) => (
           <ProcessStep

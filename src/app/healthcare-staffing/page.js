@@ -1,3 +1,5 @@
+export const metadata = { title: 'Healthcare Staffing', description: 'Reliable, fully vetted healthcare staff for care homes, hospitals and supported living.', alternates: { canonical: '/healthcare-staffing' } };
+
 import React from 'react'
 import './staffing.css'
 import { CTA, Hero, Process, Roles, ServiceModels } from './components'

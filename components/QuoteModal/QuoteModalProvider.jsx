@@ -31,14 +31,24 @@ export function QuoteModalProvider({ children }) {
   const [submitError, setSubmitError] = useState("");
   const [mounted, setMounted] = useState(false);
   const formRef = useRef(null);
+  const dialogRef = useRef(null);
+  const returnFocusRef = useRef(null);
 
   useEffect(() => setMounted(true), []);
 
   useEffect(() => {
     if (!open) return;
+    const previousFocus = returnFocusRef.current;
 
     const onKeyDown = (e) => {
       if (e.key === "Escape") setOpen(false);
+      if (e.key === "Tab") {
+        const controls = [...dialogRef.current.querySelectorAll('button:not(:disabled), input:not(:disabled), select:not(:disabled), textarea:not(:disabled), a[href]')];
+        const first = controls[0];
+        const last = controls[controls.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
     };
 
     document.addEventListener("keydown", onKeyDown);
@@ -48,12 +58,16 @@ export function QuoteModalProvider({ children }) {
     return () => {
       document.removeEventListener("keydown", onKeyDown);
       document.body.style.overflow = prevOverflow;
+      previousFocus?.focus();
     };
   }, [open]);
 
   const api = useMemo(
     () => ({
-      openQuoteModal: () => setOpen(true),
+      openQuoteModal: () => {
+        returnFocusRef.current = document.activeElement;
+        setOpen(true);
+      },
       closeQuoteModal: () => setOpen(false),
       isQuoteModalOpen: open,
     }),
@@ -62,6 +76,7 @@ export function QuoteModalProvider({ children }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (isSending || !formRef.current.reportValidity()) return;
 
     setIsSending(true);
     setSubmitError("");
@@ -115,7 +130,7 @@ export function QuoteModalProvider({ children }) {
                 if (e.target === e.currentTarget) setOpen(false);
               }}
             >
-              <div className="quote-modal__dialog">
+              <div className="quote-modal__dialog" ref={dialogRef}>
                 <button
                   type="button"
                   className="quote-modal__close"
@@ -134,7 +149,6 @@ export function QuoteModalProvider({ children }) {
                   ref={formRef}
                   className="quote-modal__form"
                   onSubmit={handleSubmit}
-                  noValidate
                 >
                   <div className="quote-modal__field">
                     <label htmlFor="modal-full-name" className="quote-modal__label">

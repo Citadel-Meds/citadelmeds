@@ -22,7 +22,7 @@ const RoleCard = ({ image, title, description }) => {
 const Roles = () => {
   return (
     <section className="roles section-padding">
-      <h1>Roles We Supply</h1>
+      <h2>Roles We Supply</h2>
       <div className="roles-grid">
         {roleData.map((role) => (
           <RoleCard

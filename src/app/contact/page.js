@@ -1,3 +1,5 @@
+export const metadata = { title: 'Contact Us', description: 'Contact Citadel Meds for healthcare staffing, clinical cleaning and recruitment support.', alternates: { canonical: '/contact' } };
+
 import React from 'react'
 import { ContactHero, Form } from './components'
 import { Footer } from '../../../components'

@@ -24,11 +24,14 @@ const footerLinks = {
     { id: "c4", label: "Quality Monitoring", href: "/compliance#quality-monitoring" },
   ],
   company: [
-    // { id: "co1", label: "About Us", href: "/" },
+    { id: "co-faqs", label: "FAQs", href: "/faqs" },
+    { id: "co1", label: "About Us", href: "/about-us" },
+    { id: "co-team", label: "Our Team", href: "/our-team" },
     { id: "co2", label: "Contact Us", href: "/contact" },
-    { id: "co3", label: "Career", href: "mailto:info@citadelmeds.co.uk" },
-    { id: "co4", label: "Privacy Policy", href: "/" },
-    { id: "co5", label: "Terms of Service", href: "/" },
+    { id: "co3", label: "Careers", href: "/careers" },
+    { id: "co4", label: "Privacy Policy", href: "/privacy-policy" },
+    { id: "co5", label: "Terms of Service", href: "/terms-of-service" },
+    { id: "co6", label: "Cookie Policy", href: "/cookie-policy" },
   ],
 };
 

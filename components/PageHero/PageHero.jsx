@@ -11,6 +11,8 @@ const PageHero = ({
   backgroundOverlay,
 }) => {
   return (
+    <>
+      <Nav />
     <section
       className="page-hero section-padding"
       style={
@@ -25,14 +27,15 @@ const PageHero = ({
       }
     >
       {backgroundOverlay && (
+        <div className="page-hero__decoration" aria-hidden="true">
         <img
           src={backgroundOverlay}
           alt=""
           className="page-hero__bg-overlay"
           aria-hidden="true"
         />
+        </div>
       )}
-      <Nav />
       <div className="page-hero__contents">
         <h1>
           {title}
@@ -43,6 +46,7 @@ const PageHero = ({
         {description && <p>{description}</p>}
       </div>
     </section>
+    </>
   );
 };
 

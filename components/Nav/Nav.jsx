@@ -3,7 +3,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import "./nav.css";
-import { FiPhone, FiMenu, FiX } from "react-icons/fi";
+import { FiPhone, FiMenu, FiX, FiChevronDown } from "react-icons/fi";
 import Link from "next/link";
 import { Logo } from "../../public/images";
 
@@ -11,6 +11,8 @@ const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const servicesRef = useRef(null);
+  const [aboutOpen, setAboutOpen] = useState(false);
+  const aboutRef = useRef(null);
 
   useEffect(() => {
     if (menuOpen) {
@@ -28,9 +30,21 @@ const Nav = () => {
       if (servicesRef.current && !servicesRef.current.contains(e.target)) {
         setServicesOpen(false);
       }
+      if (aboutRef.current && !aboutRef.current.contains(e.target)) setAboutOpen(false);
+    };
+    const handleEscape = (e) => {
+      if (e.key === "Escape") {
+        setServicesOpen(false);
+        setAboutOpen(false);
+        setMenuOpen(false);
+      }
     };
     document.addEventListener("click", handleClickOutside);
-    return () => document.removeEventListener("click", handleClickOutside);
+    document.addEventListener("keydown", handleEscape);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+      document.removeEventListener("keydown", handleEscape);
+    };
   }, []);
 
   return (
@@ -52,11 +66,12 @@ const Nav = () => {
               onClick={(e) => {
                 e.stopPropagation();
                 setServicesOpen((prev) => !prev);
+                setAboutOpen(false);
               }}
               aria-expanded={servicesOpen}
               aria-haspopup="true"
             >
-              Services
+              Services <FiChevronDown size={16} aria-hidden="true" />
             </button>
             <div
               className={`nav-dropdown ${servicesOpen ? "nav-dropdown--open" : ""}`}
@@ -81,8 +96,28 @@ const Nav = () => {
               </Link>
             </div>
           </div>
+          <div className="nav-links__services" ref={aboutRef}>
+            <button type="button" className="nav-links__trigger"
+              aria-expanded={aboutOpen} aria-controls="nav-about-links"
+              onClick={(e) => {
+                e.stopPropagation();
+                setAboutOpen((prev) => !prev);
+                setServicesOpen(false);
+              }}>
+              About <FiChevronDown size={16} aria-hidden="true" />
+            </button>
+            <div id="nav-about-links" className={`nav-dropdown ${aboutOpen ? "nav-dropdown--open" : ""}`}>
+              <Link href="/about-us" className="nav-dropdown__item" onClick={() => setAboutOpen(false)}>About Us</Link>
+              <Link href="/our-team" className="nav-dropdown__item" onClick={() => setAboutOpen(false)}>Our Team</Link>
+              <Link href="/faqs" className="nav-dropdown__item" onClick={() => setAboutOpen(false)}>FAQs</Link>
+              <Link href="/privacy-policy" className="nav-dropdown__item" onClick={() => setAboutOpen(false)}>Privacy Policy</Link>
+              <Link href="/terms-of-service" className="nav-dropdown__item" onClick={() => setAboutOpen(false)}>Terms of Service</Link>
+              <Link href="/cookie-policy" className="nav-dropdown__item" onClick={() => setAboutOpen(false)}>Cookie Policy</Link>
+            </div>
+          </div>
           <Link href="/compliance">Compliance</Link>
-          <Link href="/contact">Contact Us</Link>
+          <Link href="/careers">Careers</Link>
+          <Link href="/contact">Contact</Link>
         </div>
 
         <div className="nav-buttons">
@@ -111,6 +146,7 @@ const Nav = () => {
       {/* Mobile / tablet slide-down menu */}
       <div
         className={`nav-mobile-menu ${menuOpen ? "nav-mobile-menu--open" : ""}`}
+        inert={!menuOpen}
       >
         <div className="nav-mobile-menu__links">
           <span className="nav-mobile-menu__label">Services</span>
@@ -121,12 +157,21 @@ const Nav = () => {
             Clinical Cleaning
           </Link>
           <div className="nav-mobile-menu__separator" aria-hidden="true" />
+          <span className="nav-mobile-menu__label">About</span>
+          <Link href="/about-us" onClick={() => setMenuOpen(false)}>About Us</Link>
+          <Link href="/our-team" onClick={() => setMenuOpen(false)}>Our Team</Link>
+          <Link href="/faqs" onClick={() => setMenuOpen(false)}>FAQs</Link>
+          <Link href="/privacy-policy" onClick={() => setMenuOpen(false)}>Privacy Policy</Link>
+          <Link href="/terms-of-service" onClick={() => setMenuOpen(false)}>Terms of Service</Link>
+          <Link href="/cookie-policy" onClick={() => setMenuOpen(false)}>Cookie Policy</Link>
+          <div className="nav-mobile-menu__separator" aria-hidden="true" />
           <Link href="/compliance" onClick={() => setMenuOpen(false)}>
             Compliance
           </Link>
           <Link href="/contact" onClick={() => setMenuOpen(false)}>
-            Contact Us
+            Contact
           </Link>
+          <Link href="/careers" onClick={() => setMenuOpen(false)}>Careers</Link>
         </div>
         <div className="nav-mobile-menu__buttons">
           <Link

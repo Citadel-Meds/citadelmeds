@@ -19,7 +19,7 @@
   width: 100%;
 }
 
-.solution-top h1 {
+.solution-top h2 {
   color: var(--obsidian);
   font-size: 40px;
   font-weight: 600;
@@ -182,7 +182,7 @@
   text-align: center;
 }
 
-.solutions-bottom__cta h1 {
+.solutions-bottom__cta h2 {
   color: var(--black);
   font-size: 56px;
   font-weight: 700;
@@ -282,7 +282,7 @@
     gap: 32px;
   }
 
-  .solution-top h1 {
+  .solution-top h2 {
     font-size: 32px;
   }
 
@@ -344,7 +344,7 @@
     border-radius: 28px;
   }
 
-  .solutions-bottom__cta h1 {
+  .solutions-bottom__cta h2 {
     font-size: 40px;
     letter-spacing: -0.8px;
   }
@@ -377,7 +377,7 @@
     gap: 24px;
   }
 
-  .solution-top h1 {
+  .solution-top h2 {
     font-size: 24px;
     line-height: 130%;
   }
@@ -453,7 +453,7 @@
     gap: 12px;
   }
 
-  .solutions-bottom__cta h1 {
+  .solutions-bottom__cta h2 {
     font-size: 28px;
     letter-spacing: -0.56px;
     line-height: 125%;

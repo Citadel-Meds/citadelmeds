@@ -165,7 +165,6 @@ const Form = () => {
               ref={formRef}
               className="contact-form__form"
               onSubmit={handleSubmit}
-              noValidate
             >
               <div className="contact-form__field">
                 <label

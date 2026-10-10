@@ -35,6 +35,10 @@ export const SolutionGrid = () => {
 };
 
 export const SolutionCta = ({
+  eyebrow,
+  headingAs: Heading = "h2",
+  background,
+  secondaryButton,
   title = "Need compliant healthcare staff urgently?",
   subtitle = "We respond instantly - active 24/7",
   primary = { label: "Request Staff Now", href: "mailto:info@citadelmeds.co.uk" },
@@ -48,23 +52,27 @@ export const SolutionCta = ({
 }) => {
   return (
     <div className="solutions-bottom__cta">
-      <img
+      {background ?? <img
         src={ctaBgElement?.src ?? ctaBgElement}
         alt="bg-element"
         className="solutions-bottom__cta-bg-element"
-      />
+      />}
       <div className="solutions-bottom__cta-top">
-        <h1>{title}</h1>
+        {eyebrow && <p className="solutions-bottom__cta-eyebrow">{eyebrow}</p>}
+        <Heading>{title}</Heading>
         <p>{subtitle}</p>
       </div>
       <div className="solutions-bottom__cta__buttons">
-        <Link href={primary.href}>{primary.label}</Link>
-        <Link href={secondary.href}>
+        <Link href={primary.href}>
+          {primary.iconSrc && <img src={primary.iconSrc} alt={primary.iconAlt ?? ""} />}
+          {primary.label}
+        </Link>
+        {secondaryButton ?? <Link href={secondary.href}>
           {secondary.iconSrc ? (
             <img src={secondary.iconSrc} alt={secondary.iconAlt ?? ""} />
           ) : null}{" "}
           {secondary.label}
-        </Link>
+        </Link>}
       </div>
     </div>
   );
@@ -74,7 +82,7 @@ const Solutions = () => {
   return (
     <section className="solution section-padding">
       <div className="solution-top">
-        <h1>Flexible Staffing Solutions</h1>
+        <h2>Flexible Staffing Solutions</h2>
         <div className="solution-top-grid">
           <SolutionGrid />
           <div className="solution-top__single-grid">

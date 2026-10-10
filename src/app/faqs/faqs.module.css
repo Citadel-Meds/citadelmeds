@@ -1,0 +1,55 @@
+.page { background: var(--ice-blue); color: #333; }
+.content { padding: 80px 104px; display: flex; flex-direction: column; gap: 40px; }
+.categories { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; padding: 0 120px; }
+.categories a { display: flex; align-items: center; gap: 8px; padding: 8px 16px; border: 1px solid rgba(102,102,102,.2); border-radius: 8px; background: rgba(102,102,102,.1); font-size: 16px; font-weight: 500; line-height: 1.2; }
+.categories img { width: 24px; height: 24px; flex-shrink: 0; }
+.categories a:hover { background: var(--sky-blue); border-color: var(--aqua); }
+.group { display: flex; flex-direction: column; gap: 16px; scroll-margin-top: 140px; }
+.group h2 { display: flex; align-items: center; gap: 16px; text-align: left; color: var(--obsidian); font-size: 24px; font-weight: 600; line-height: 1.2; letter-spacing: -.48px; }
+.groupIcon { display: flex; padding: 16px; background: var(--sky-blue); border-radius: 24px; flex-shrink: 0; }
+.groupIcon img { width: 32px; height: 32px; }
+.questions { display: flex; flex-direction: column; gap: 16px; }
+.question { border: 1px solid #b2e7ff; padding: 24px; border-radius: 24px; }
+.question summary { display: flex; align-items: center; gap: 16px; list-style: none; cursor: pointer; }
+.question summary::-webkit-details-marker { display: none; }
+.question h3 { flex: 1; text-align: left; font-size: 24px; font-weight: 600; line-height: 1.2; }
+.question p { margin-top: 24px; font-size: 16px; font-weight: 500; line-height: 1.4; }
+.question p a { color: var(--primary-hover); text-decoration: underline; text-underline-offset: 3px; }
+.toggle { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; background: rgba(1,173,238,.2); border: 1px solid rgba(1,173,238,.4); border-radius: 50%; }
+.toggle img { width: 17.5px; height: 17.5px; transition: transform .2s; }
+.question[open] .toggle img { transform: rotate(45deg); }
+.contact { padding: 80px 104px; background: linear-gradient(180deg,#d6f7ff 0%,#fafdff 50%,white 100%); }
+.contact :global(.solutions-bottom__cta-top) { width: 100%; }
+.contact :global(.solutions-bottom__cta-top h2) { color: black; font-size: 56px; font-weight: 700; line-height: 1.2; letter-spacing: -1.12px; }
+.contact :global(.solutions-bottom__cta-eyebrow) { font-weight: 600; line-height: 1; }
+.contact :global(.solutions-bottom__cta__buttons a) { gap: 8px; font-weight: 600; }
+.contact :global(.solutions-bottom__cta__buttons a:first-child) { background: var(--ice); }
+.contact :global(.solutions-bottom__cta__buttons a img) { width: 25px; height: 25px; }
+.contactBackground { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.contactBackground img { position: absolute; max-width: none; }
+.glowRight { right: -117px; top: -94.5px; }
+.glowBottom { left: 55px; top: 208px; transform: rotate(-166.6deg); }
+.glowRightBottom { right: -204px; top: 32px; }
+.glowLeft { left: -231px; top: -102px; }
+.page a:focus-visible, .question summary:focus-visible { outline: 2px solid var(--primary-hover); outline-offset: 5px; border-radius: 8px; }
+@media (max-width: 1150px) {
+  .content, .contact { padding: 64px 40px; }
+  .categories { padding: 0; }
+}
+@media (max-width: 900px) {
+  .content, .contact { padding: 40px 24px; }
+  .contact :global(.solutions-bottom__cta-top h2) { font-size: 40px; letter-spacing: -.8px; }
+}
+@media (max-width: 600px) {
+  .content, .contact { padding: 32px 16px; }
+  .categories { justify-content: flex-start; gap: 8px; }
+  .categories a { font-size: 14px; padding: 8px 12px; }
+  .group h2 { font-size: 21px; letter-spacing: -.42px; gap: 12px; }
+  .groupIcon { padding: 12px; border-radius: 18px; }
+  .question { padding: 20px; border-radius: 20px; }
+  .question h3 { font-size: 18px; line-height: 1.4; }
+  .question p { margin-top: 16px; font-size: 15px; line-height: 1.5; }
+  .contact :global(.solutions-bottom__cta-top h2) { font-size: 30px; letter-spacing: -.6px; }
+  .contactBackground { opacity: .6; }
+}
+@media (prefers-reduced-motion: reduce) { .toggle img { transition: none; } }

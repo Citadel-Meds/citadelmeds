@@ -1,3 +1,5 @@
+export const metadata = { title: 'Clinical Cleaning', description: 'Specialist clinical cleaning services supporting infection prevention and safe care environments.', alternates: { canonical: '/clinical-cleaning' } };
+
 import React from "react";
 import "./cleaning.css";
 import { CleaningHero, CleaningServices, Compliance } from "./components";
