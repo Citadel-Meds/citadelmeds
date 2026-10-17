@@ -6,6 +6,7 @@ import "./nav.css";
 import { FiPhone, FiMenu, FiX, FiChevronDown } from "react-icons/fi";
 import Link from "next/link";
 import { Logo } from "../../public/images";
+import LiquidGlass from "./LiquidGlass";
 
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -50,6 +51,7 @@ const Nav = () => {
   return (
     <>
       <nav className={`nav ${menuOpen ? "nav--open" : ""}`}>
+        <LiquidGlass />
         <Link href="/" className="nav-logo-link">
           <img
             className="nav-logo"

@@ -4,7 +4,7 @@ export const valueData = [
   {
     id: 1,
     image: Visual1?.src ?? Visual1,
-    title: "12-Stage Safer Recruitment",
+    title: "NHS Standard Recruitment",
     description: "Aligned with NHS Employment Check Standards",
   },
   {
@@ -22,7 +22,7 @@ export const valueData = [
   {
     id: 4,
     image: Visual4?.src ?? Visual4,
-    title: "Only 1 in 10 Deployed",
+    title: "Only Trained & Verified Staff Deployed",
     description: "Strict selection for quality and safety",
   },
   {

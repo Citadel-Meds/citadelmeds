@@ -44,7 +44,7 @@ export default function FaqsPage() {
           <div className={styles.categories} role="navigation" aria-label="FAQ categories">
             {faqGroups.map((group) => (
               <a href={`#${group.id}`} key={group.id}>
-                <img src="/images/faqs/category.svg" alt="" />{group.title}
+                <img src={`/images/faqs/categories/${group.icon}`} alt="" />{group.title}
               </a>
             ))}
           </div>
@@ -56,7 +56,7 @@ export default function FaqsPage() {
               </h2>
               <div className={styles.questions}>
                 {group.items.map((item) => (
-                  <details className={styles.question} open key={item.id}>
+                  <details className={styles.question} name="faq-accordion" open={item.id === faqGroups[0].items[0].id} key={item.id}>
                     <summary>
                       <h3>{item.question}</h3>
                       <span className={styles.toggle} aria-hidden="true"><img src="/images/faqs/plus.svg" alt="" /></span>

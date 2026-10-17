@@ -38,4 +38,4 @@ export const processSteps = [
 ]
 
 export const processBannerText =
-  'Only 1 in 10 applicants progress to deployment.'
+  'Only qualified & verified applicants progress to deployment.'
