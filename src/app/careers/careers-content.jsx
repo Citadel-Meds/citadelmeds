@@ -39,20 +39,22 @@ export default function CareersContent() {
     setSending(true);
     setStatus(null);
     try {
-      await emailjs.send("service_vgnq2mp", "template_wa1aih4", {
+      await emailjs.send("service_jfrfl3s", "template_w5ksred", {
         user_name: String(form.get("fullName")).trim(),
         user_email: String(form.get("email")).trim(),
         phone: String(form.get("phone")).trim(),
-        organization: "Career applicant",
-        service: `Career application: ${role}`,
-        message: ["CAREER APPLICATION", `Role: ${role}`, `Experience: ${form.get("experience") || "Not specified"}`, `Availability: ${form.get("availability") || "Not specified"}`, `Right to work in the UK: ${form.get("rightToWork")}`, "", `About the applicant: ${details.trim() || "Not provided"}`].join("\n"),
-      }, "3f0JbSF6LP8Eg3oRs");
+        role,
+        experience: String(form.get("experience") || "Not specified"),
+        availability: String(form.get("availability") || "Not specified"),
+        right_to_work: String(form.get("rightToWork") || "Not specified"),
+        message: details.trim() || "Not provided",
+      }, { publicKey: "peSrE35ohVZ2HGumX" });
       formRef.current.reset();
       setRole("");
       setExperience(""); setAvailability(""); setRightToWork(""); setDetails("");
       setStatus({ error: false, text: "Thank you! Your application has been sent. Our recruitment team will be in touch." });
     } catch {
-      setStatus({ error: true, text: "Your application could not be sent. Please try again or email info@citadelmeds.co.uk." });
+      setStatus({ error: true, text: "Your application could not be sent. Please try again or email recruitment@citadelmeds.co.uk." });
     } finally { setSending(false); }
   }
   return <div className={styles.page}>
