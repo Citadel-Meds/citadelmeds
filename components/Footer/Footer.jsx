@@ -36,7 +36,7 @@ const footerLinks = {
 };
 
 const ADDRESS = "Flat 3, 8 castle yard Oswaldtwistle United Kingdom";
-const PHONE = "07310 086 696";
+const PHONE = "07456 910 745";
 const EMAIL = "info@citadelmeds.co.uk";
 const OUTLOOK_EMAIL = "citadelmeds@outlook.com";
 
@@ -112,7 +112,7 @@ const Footer = () => {
               <img src={LOCATION_ICON_URL} alt="" width={24} height={24} />
               <span>{ADDRESS}</span>
             </a>
-            <a href="tel:07310086696" className="footer__contact-item">
+            <a href="tel:07456910745" className="footer__contact-item">
               <img src={PHONE_ICON_URL} alt="" width={24} height={24} />
               <span>{PHONE}</span>
             </a>

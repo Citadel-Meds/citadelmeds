@@ -123,9 +123,9 @@ const Nav = () => {
         </div>
 
         <div className="nav-buttons">
-          <Link href="tel:07310086696" className="nav-button">
+          <Link href="tel:07456910745" className="nav-button">
             <FiPhone />
-            <p>07310 086 696</p>
+            <p>07456 910 745</p>
           </Link>
           <Link
             href="mailto:info@citadelmeds.co.uk"
@@ -177,12 +177,12 @@ const Nav = () => {
         </div>
         <div className="nav-mobile-menu__buttons">
           <Link
-            href="tel:07310086696"
+            href="tel:07456910745"
             className="nav-mobile-menu__btn nav-mobile-menu__btn--tel"
             onClick={() => setMenuOpen(false)}
           >
             <FiPhone size={18} />
-            07310 086 696
+            07456 910 745
           </Link>
           <Link
             href="mailto:info@citadelmeds.co.uk"
